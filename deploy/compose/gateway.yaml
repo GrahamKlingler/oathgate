@@ -1,0 +1,2 @@
+listen_addr: ":8080"
+backend_url: "http://localhost:11434"
