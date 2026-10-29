@@ -31,7 +31,10 @@ func Load(path string) (Config, error) {
 		log.Fatal(err)
 	}
 	var cfg Config
-	yaml.Unmarshal(yml, &cfg)
+	err := yaml.Unmarshal(yml, &cfg)
+	if err != nil {
+		log.Fatal(err)
+	}
 	listen_addr := os.Getenv("GATEWAY_LISTEN_ADDR")
 	backend_url := os.Getenv("GATEWAY_BACKEND_URL")
 	if len(listen_addr) > 0 {
