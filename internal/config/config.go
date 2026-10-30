@@ -31,7 +31,7 @@ func Load(path string) (Config, error) {
 		log.Fatal(err)
 	}
 	var cfg Config
-	err := yaml.Unmarshal(yml, &cfg)
+	err = yaml.Unmarshal(yml, &cfg)
 	if err != nil {
 		log.Fatal(err)
 	}
